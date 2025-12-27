@@ -31,10 +31,7 @@ export default function Index() {
 
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
-      // once an img is selected, a user can use app options to add an emoji
-      {
-        setShowAppOptions(true);
-      }
+      setShowAppOptions(true);
     } else {
       alert('You did not select any image.');
     }
@@ -44,12 +41,11 @@ export default function Index() {
     setShowAppOptions(false);
   };
 
-  // only show modal when adding a sticker
   const onAddSticker = () => {
     setIsModalVisible(true);
   };
 
-  const onModalClose = async () => {
+  const onModalClose = () => {
     setIsModalVisible(false);
   };
 

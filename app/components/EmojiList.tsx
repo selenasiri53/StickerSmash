@@ -30,7 +30,12 @@ export default function EmojiList({ onSelect, onCloseModal }: Props) {
       data={emoji}
       contentContainerStyle={styles.listContainer}
       renderItem={({ item, index }) => (
-        <Pressable>
+        <Pressable
+          onPress={() => {
+            onSelect(item);
+            onCloseModal();
+          }}
+        >
           <Image source={item} key={index} style={styles.image} />
         </Pressable>
       )}
